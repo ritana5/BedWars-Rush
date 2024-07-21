@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.ritana5</groupId>
+    <artifactId>BedWars-Rush</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>BedWars-Rush</name>
+
+    <properties>
+        <java.version>11</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>com.cryptomorin.xseries</pattern>
+                            <!-- Be sure to change the package below -->
+                            <shadedPattern>net.ritana5.utils</shadedPattern>
+                        </relocation>
+                    </relocations>
+                    <!-- Here you can remove the classes you don't use. -->
+                    <!-- These are some examples. -->
+                    <!-- The "unused" package and SkullCacheListener are excluded by default. -->
+                    <!-- Some utilities such a XItemStack depend on more than 3 other classes, so watch out. -->
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>com/cryptomorin/xseries/XBiome*</exclude>
+                                <exclude>com/cryptomorin/xseries/NMSExtras*</exclude>
+                                <exclude>com/cryptomorin/xseries/NoteBlockMusic*</exclude>
+                                <exclude>com/cryptomorin/xseries/SkullCacheListener*</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tomkeuper.bedwars</groupId>
+            <artifactId>bedwars-plugin</artifactId>
+            <version>1.2.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/BedWars-1.2.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.tomkeuper.bedwars</groupId>
+            <artifactId>bedwars-api</artifactId>
+            <version>1.2.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/BedWars-1.2.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.andrei1058.bedwars</groupId>
+            <artifactId>bedwars-plugin</artifactId>
+            <version>23.12.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/bedwars-plugin-23.12.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.andrei1058.bedwars</groupId>
+            <artifactId>bedwars-api</artifactId>
+            <version>23.12.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/bedwars-plugin-23.12.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.github.cryptomorin</groupId>
+            <artifactId>XSeries</artifactId>
+            <version>11.2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>24.1.0</version>
+        </dependency>
+    </dependencies>
+</project>
