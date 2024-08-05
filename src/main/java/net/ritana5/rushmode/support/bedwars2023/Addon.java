@@ -81,7 +81,7 @@ public class Addon extends com.tomkeuper.bedwars.api.addon.Addon {
         JavaPlugin.getPlugin(RushMode.class).initConfig(configFile);
         JavaPlugin.getPlugin(RushMode.class).getServer().getPluginManager().registerEvents(new BedWarsListener(), JavaPlugin.getPlugin(RushMode.class));
         JavaPlugin.getPlugin(RushMode.class).getServer().getPluginManager().registerEvents(new FastWoolListener(), JavaPlugin.getPlugin(RushMode.class));
-        Bukkit.getConsoleSender().sendMessage("[BedWars2023] " + color("The BedWars-Rush addon was originally contributed to by Kiiya, Happy_FZM, and Zuyte."));
+        Bukkit.getConsoleSender().sendMessage("[BedWars2023] " + color("The &4B&ce&6d&eW&aa&9r&5s&d-&3R&bu&3s&bh addon was originally contributed to by Kiiya, Happy_FZM, and Zuyte."));
         Utils.info("&4B&ce&6d&eW&aa&9r&5s&d-&3R&bu&3s&bh");
         RushMode.log.info("Plugin Version: " + JavaPlugin.getPlugin(RushMode.class).getDescription().getVersion());
         if (!(JavaPlugin.getPlugin(RushMode.class).getDescription().getVersion().equals("1.0"))) {
