@@ -6,7 +6,7 @@ contributors:
   - Kiiya
   - Happy_FZM
   - Zuyte
-main: net.ritana5.rushmode.RushMode
+main: net.ritana5.rush.Rush
 api-version: "1.13"
 softdepend:
   - BedWars1058
