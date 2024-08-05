@@ -84,7 +84,7 @@ public class Addon extends com.tomkeuper.bedwars.api.addon.Addon {
         Bukkit.getConsoleSender().sendMessage("[BedWars2023] " + color("The &4B&ce&6d&eW&aa&9r&5s&d-&3R&bu&3s&bh addon was originally contributed to by Kiiya, Happy_FZM, and Zuyte."));
         Utils.info("&4B&ce&6d&eW&aa&9r&5s&d-&3R&bu&3s&bh");
         Rush.log.info("Plugin Version: " + JavaPlugin.getPlugin(Rush.class).getDescription().getVersion());
-        if (!(JavaPlugin.getPlugin(Rush.class).getDescription().getVersion().equals("1.0"))) {
+        if (!(JavaPlugin.getPlugin(Rush.class).getDescription().getVersion().equals("1.0.1"))) {
             Rush.log.info("WARNING: You are using an outdated version of the plugin! Please update at or (WIP)");
         } else {
             Rush.log.info(("You are running on the latest release!"));
