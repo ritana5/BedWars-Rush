@@ -28,6 +28,7 @@ public class Message {
                             "&a" + "▬".repeat(72)));
                     yml.addDefault(MESSAGES_BRIDGE_MODE_ACTIVATED, "&a&lMODO DE PONTE ATIVADO");
                     yml.addDefault(MESSAGES_BRIDGE_MODE_DEACTIVATED, "&c&lMODO DE PONTE DESATIVADO");
+                    break;
                 default:
                     yml.addDefault(MESSAGES_ARENA_START_TUTORIAL, Arrays.asList("&a" + "▬".repeat(72),
                             "&f&l                       Bed Wars Rush",
